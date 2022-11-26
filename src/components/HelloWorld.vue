@@ -1,15 +1,23 @@
 <script setup>
+import { useStore } from '../store/vuex';
+import { computed } from 'vue'
 defineProps({
   msg: {
     type: String,
     required: true
   }
 })
+let store = useStore()
+let count = computed(() => store.state.count)
+function addNum() {
+  store.commit('addNum', 2)
+}
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
+    <h1 @click="addNum">test:{{ count }}</h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +

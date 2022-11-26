@@ -9,6 +9,9 @@ const counterStore = createStore({
   mutations: {
     add(state) {
       state.count++
+    },
+    addNum(state, num) {
+      state.count+=num
     }
   }
 })
