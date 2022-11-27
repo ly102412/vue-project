@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import Counter from './components/Counter.vue'
-import HelloWord from './components/HelloWorld.vue'
 let count = ref(1)
 function add() {
   count.value++
@@ -10,10 +9,12 @@ function add() {
 
 <template>
   <div>
-    <h1 @click="add">{{ count }}</h1>
-    <Counter />
-    <HelloWord/>
+    <!-- <h1 @click="add">{{ count }}</h1>
+    <Counter /> -->
+    <router-link to="/">首页</router-link>
+    <router-link to="/about">关于</router-link>
   </div>
+   <router-view></router-view>
 </template>
 
 <style scoped>
